@@ -15,6 +15,12 @@
 		B4B77A62253E0DA100DFE31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B77A60253E0DA100DFE31C /* LaunchScreen.storyboard */; };
 		B4B77A6D253E0DA200DFE31C /* MessageApp_VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A6C253E0DA200DFE31C /* MessageApp_VIPERTests.swift */; };
 		B4B77A78253E0DA200DFE31C /* MessageApp_VIPERUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A77253E0DA200DFE31C /* MessageApp_VIPERUITests.swift */; };
+		B4B77A93253E117900DFE31C /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A92253E117900DFE31C /* AppContainer.swift */; };
+		B4B77A98253E11AE00DFE31C /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A97253E11AE00DFE31C /* AppRouter.swift */; };
+		B4B77AA7253E14D800DFE31C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AA6253E14D800DFE31C /* Message.swift */; };
+		B4B77AAD253E15D500DFE31C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AAC253E15D500DFE31C /* Result.swift */; };
+		B4B77AB2253E161900DFE31C /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AB1253E161900DFE31C /* MessagesService.swift */; };
+		B4B77AB8253E1D8600DFE31C /* MessagesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		B4B77A73253E0DA200DFE31C /* MessageApp-VIPERUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MessageApp-VIPERUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B77A77253E0DA200DFE31C /* MessageApp_VIPERUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApp_VIPERUITests.swift; sourceTree = "<group>"; };
 		B4B77A79253E0DA200DFE31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4B77A92253E117900DFE31C /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		B4B77A97253E11AE00DFE31C /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		B4B77AA6253E14D800DFE31C /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B4B77AAC253E15D500DFE31C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		B4B77AB1253E161900DFE31C /* MessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
+		B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +111,11 @@
 		B4B77A54253E0D9E00DFE31C /* MessageApp-VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				B4B77A55253E0D9E00DFE31C /* AppDelegate.swift */,
-				B4B77A57253E0D9E00DFE31C /* SceneDelegate.swift */,
-				B4B77A59253E0D9E00DFE31C /* ViewController.swift */,
-				B4B77A5B253E0D9E00DFE31C /* Main.storyboard */,
-				B4B77A5E253E0DA100DFE31C /* Assets.xcassets */,
-				B4B77A60253E0DA100DFE31C /* LaunchScreen.storyboard */,
-				B4B77A63253E0DA100DFE31C /* Info.plist */,
+				B4B77AA5253E14B400DFE31C /* Network */,
+				B4B77AA4253E148C00DFE31C /* Scenes */,
+				B4B77A88253E114D00DFE31C /* App */,
+				B4B77A9C253E13F800DFE31C /* Resources */,
+				B4B77A9D253E140900DFE31C /* SupportingFiles */,
 			);
 			path = "MessageApp-VIPER";
 			sourceTree = "<group>";
@@ -126,6 +136,70 @@
 				B4B77A79253E0DA200DFE31C /* Info.plist */,
 			);
 			path = "MessageApp-VIPERUITests";
+			sourceTree = "<group>";
+		};
+		B4B77A88253E114D00DFE31C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77A57253E0D9E00DFE31C /* SceneDelegate.swift */,
+				B4B77A55253E0D9E00DFE31C /* AppDelegate.swift */,
+				B4B77A92253E117900DFE31C /* AppContainer.swift */,
+				B4B77A97253E11AE00DFE31C /* AppRouter.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B4B77A9C253E13F800DFE31C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77A5E253E0DA100DFE31C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B4B77A9D253E140900DFE31C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77A60253E0DA100DFE31C /* LaunchScreen.storyboard */,
+				B4B77A63253E0DA100DFE31C /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B4B77AA4253E148C00DFE31C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77AB6253E1D6900DFE31C /* Messages */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B4B77AA5253E14B400DFE31C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77AAB253E15CB00DFE31C /* Helpers */,
+				B4B77AA6253E14D800DFE31C /* Message.swift */,
+				B4B77AB1253E161900DFE31C /* MessagesService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B4B77AAB253E15CB00DFE31C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77AAC253E15D500DFE31C /* Result.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B4B77AB6253E1D6900DFE31C /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77A59253E0D9E00DFE31C /* ViewController.swift */,
+				B4B77A5B253E0D9E00DFE31C /* Main.storyboard */,
+				B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +333,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4B77A5A253E0D9E00DFE31C /* ViewController.swift in Sources */,
+				B4B77AB2253E161900DFE31C /* MessagesService.swift in Sources */,
+				B4B77A93253E117900DFE31C /* AppContainer.swift in Sources */,
 				B4B77A56253E0D9E00DFE31C /* AppDelegate.swift in Sources */,
+				B4B77AB8253E1D8600DFE31C /* MessagesBuilder.swift in Sources */,
+				B4B77AA7253E14D800DFE31C /* Message.swift in Sources */,
+				B4B77AAD253E15D500DFE31C /* Result.swift in Sources */,
+				B4B77A98253E11AE00DFE31C /* AppRouter.swift in Sources */,
 				B4B77A58253E0D9E00DFE31C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +518,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T542AJZ28;
-				INFOPLIST_FILE = "MessageApp-VIPER/Info.plist";
+				INFOPLIST_FILE = "MessageApp-VIPER/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +537,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6T542AJZ28;
-				INFOPLIST_FILE = "MessageApp-VIPER/Info.plist";
+				INFOPLIST_FILE = "MessageApp-VIPER/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
