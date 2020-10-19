@@ -25,6 +25,7 @@
 		B4B77AD8253E2BC900DFE31C /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AD7253E2BC900DFE31C /* MessagesInteractor.swift */; };
 		B4B77ADD253E2BD400DFE31C /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77ADC253E2BD400DFE31C /* MessagesPresenter.swift */; };
 		B4B77AE2253E2BE100DFE31C /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AE1253E2BE100DFE31C /* MessagesRouter.swift */; };
+		B4B77AEC253E3C0000DFE31C /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AEB253E3C0000DFE31C /* MessageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		B4B77AD7253E2BC900DFE31C /* MessagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
 		B4B77ADC253E2BD400DFE31C /* MessagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
 		B4B77AE1253E2BE100DFE31C /* MessagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
+		B4B77AEB253E3C0000DFE31C /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		B4B77AB6253E1D6900DFE31C /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				B4B77AEA253E3BF500DFE31C /* MessageCell */,
 				B4B77A5B253E0D9E00DFE31C /* Messages.storyboard */,
 				B4B77A59253E0D9E00DFE31C /* MessagesViewController.swift */,
 				B4B77ADC253E2BD400DFE31C /* MessagesPresenter.swift */,
@@ -212,6 +215,14 @@
 				B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		B4B77AEA253E3BF500DFE31C /* MessageCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4B77AEB253E3C0000DFE31C /* MessageCell.swift */,
+			);
+			path = MessageCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,6 +368,7 @@
 				B4B77A98253E11AE00DFE31C /* AppRouter.swift in Sources */,
 				B4B77AD8253E2BC900DFE31C /* MessagesInteractor.swift in Sources */,
 				B4B77A58253E0D9E00DFE31C /* SceneDelegate.swift in Sources */,
+				B4B77AEC253E3C0000DFE31C /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

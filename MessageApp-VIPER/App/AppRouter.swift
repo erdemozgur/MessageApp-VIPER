@@ -18,8 +18,8 @@ final class AppRouter {
     
     func start() {
         let viewController = MessagesBuilder.make()
-//        let navigationController = UINavigationController(rootViewController: viewController)
-        window.rootViewController = viewController
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
     
