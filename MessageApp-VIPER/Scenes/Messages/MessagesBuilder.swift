@@ -9,12 +9,15 @@ import UIKit
 
 final class MessagesBuilder {
     
-    static func make() -> ViewController {
+    static func make() -> MessagesViewController {
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-//        viewController.service = app.service
-        return viewController
+        let storyboard = UIStoryboard(name: "Messages", bundle: nil)
+        let view = storyboard.instantiateViewController(withIdentifier: "MessagesViewController") as! MessagesViewController
+        let interactor = MessagesInteractor(service: app.service)
+        let presenter = MessagesPresenter(view: view, interactor: interactor)
+        view.presenter = presenter
+        
+        return view
         
     }
     

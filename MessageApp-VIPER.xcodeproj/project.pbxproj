@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		B4B77A56253E0D9E00DFE31C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A55253E0D9E00DFE31C /* AppDelegate.swift */; };
 		B4B77A58253E0D9E00DFE31C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A57253E0D9E00DFE31C /* SceneDelegate.swift */; };
-		B4B77A5A253E0D9E00DFE31C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A59253E0D9E00DFE31C /* ViewController.swift */; };
-		B4B77A5D253E0D9E00DFE31C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B77A5B253E0D9E00DFE31C /* Main.storyboard */; };
+		B4B77A5A253E0D9E00DFE31C /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A59253E0D9E00DFE31C /* MessagesViewController.swift */; };
+		B4B77A5D253E0D9E00DFE31C /* Messages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B77A5B253E0D9E00DFE31C /* Messages.storyboard */; };
 		B4B77A5F253E0DA100DFE31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4B77A5E253E0DA100DFE31C /* Assets.xcassets */; };
 		B4B77A62253E0DA100DFE31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B77A60253E0DA100DFE31C /* LaunchScreen.storyboard */; };
 		B4B77A6D253E0DA200DFE31C /* MessageApp_VIPERTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77A6C253E0DA200DFE31C /* MessageApp_VIPERTests.swift */; };
@@ -21,6 +21,10 @@
 		B4B77AAD253E15D500DFE31C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AAC253E15D500DFE31C /* Result.swift */; };
 		B4B77AB2253E161900DFE31C /* MessagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AB1253E161900DFE31C /* MessagesService.swift */; };
 		B4B77AB8253E1D8600DFE31C /* MessagesBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */; };
+		B4B77AD3253E2BB700DFE31C /* MessagesContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AD2253E2BB700DFE31C /* MessagesContracts.swift */; };
+		B4B77AD8253E2BC900DFE31C /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AD7253E2BC900DFE31C /* MessagesInteractor.swift */; };
+		B4B77ADD253E2BD400DFE31C /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77ADC253E2BD400DFE31C /* MessagesPresenter.swift */; };
+		B4B77AE2253E2BE100DFE31C /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B77AE1253E2BE100DFE31C /* MessagesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +48,8 @@
 		B4B77A52253E0D9E00DFE31C /* MessageApp-VIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MessageApp-VIPER.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4B77A55253E0D9E00DFE31C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4B77A57253E0D9E00DFE31C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B4B77A59253E0D9E00DFE31C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B4B77A5C253E0D9E00DFE31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B4B77A59253E0D9E00DFE31C /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		B4B77A5C253E0D9E00DFE31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Messages.storyboard; sourceTree = "<group>"; };
 		B4B77A5E253E0DA100DFE31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4B77A61253E0DA100DFE31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4B77A63253E0DA100DFE31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +65,10 @@
 		B4B77AAC253E15D500DFE31C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		B4B77AB1253E161900DFE31C /* MessagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesService.swift; sourceTree = "<group>"; };
 		B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesBuilder.swift; sourceTree = "<group>"; };
+		B4B77AD2253E2BB700DFE31C /* MessagesContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesContracts.swift; sourceTree = "<group>"; };
+		B4B77AD7253E2BC900DFE31C /* MessagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
+		B4B77ADC253E2BD400DFE31C /* MessagesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
+		B4B77AE1253E2BE100DFE31C /* MessagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +119,8 @@
 		B4B77A54253E0D9E00DFE31C /* MessageApp-VIPER */ = {
 			isa = PBXGroup;
 			children = (
-				B4B77AA5253E14B400DFE31C /* Network */,
 				B4B77AA4253E148C00DFE31C /* Scenes */,
+				B4B77AA5253E14B400DFE31C /* Network */,
 				B4B77A88253E114D00DFE31C /* App */,
 				B4B77A9C253E13F800DFE31C /* Resources */,
 				B4B77A9D253E140900DFE31C /* SupportingFiles */,
@@ -195,8 +203,12 @@
 		B4B77AB6253E1D6900DFE31C /* Messages */ = {
 			isa = PBXGroup;
 			children = (
-				B4B77A59253E0D9E00DFE31C /* ViewController.swift */,
-				B4B77A5B253E0D9E00DFE31C /* Main.storyboard */,
+				B4B77A5B253E0D9E00DFE31C /* Messages.storyboard */,
+				B4B77A59253E0D9E00DFE31C /* MessagesViewController.swift */,
+				B4B77ADC253E2BD400DFE31C /* MessagesPresenter.swift */,
+				B4B77AD7253E2BC900DFE31C /* MessagesInteractor.swift */,
+				B4B77AD2253E2BB700DFE31C /* MessagesContracts.swift */,
+				B4B77AE1253E2BE100DFE31C /* MessagesRouter.swift */,
 				B4B77AB7253E1D8600DFE31C /* MessagesBuilder.swift */,
 			);
 			path = Messages;
@@ -307,7 +319,7 @@
 			files = (
 				B4B77A62253E0DA100DFE31C /* LaunchScreen.storyboard in Resources */,
 				B4B77A5F253E0DA100DFE31C /* Assets.xcassets in Resources */,
-				B4B77A5D253E0D9E00DFE31C /* Main.storyboard in Resources */,
+				B4B77A5D253E0D9E00DFE31C /* Messages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +344,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4B77A5A253E0D9E00DFE31C /* ViewController.swift in Sources */,
+				B4B77AE2253E2BE100DFE31C /* MessagesRouter.swift in Sources */,
+				B4B77A5A253E0D9E00DFE31C /* MessagesViewController.swift in Sources */,
 				B4B77AB2253E161900DFE31C /* MessagesService.swift in Sources */,
+				B4B77ADD253E2BD400DFE31C /* MessagesPresenter.swift in Sources */,
 				B4B77A93253E117900DFE31C /* AppContainer.swift in Sources */,
 				B4B77A56253E0D9E00DFE31C /* AppDelegate.swift in Sources */,
 				B4B77AB8253E1D8600DFE31C /* MessagesBuilder.swift in Sources */,
 				B4B77AA7253E14D800DFE31C /* Message.swift in Sources */,
 				B4B77AAD253E15D500DFE31C /* Result.swift in Sources */,
+				B4B77AD3253E2BB700DFE31C /* MessagesContracts.swift in Sources */,
 				B4B77A98253E11AE00DFE31C /* AppRouter.swift in Sources */,
+				B4B77AD8253E2BC900DFE31C /* MessagesInteractor.swift in Sources */,
 				B4B77A58253E0D9E00DFE31C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,12 +392,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B4B77A5B253E0D9E00DFE31C /* Main.storyboard */ = {
+		B4B77A5B253E0D9E00DFE31C /* Messages.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B4B77A5C253E0D9E00DFE31C /* Base */,
 			);
-			name = Main.storyboard;
+			name = Messages.storyboard;
 			sourceTree = "<group>";
 		};
 		B4B77A60253E0DA100DFE31C /* LaunchScreen.storyboard */ = {

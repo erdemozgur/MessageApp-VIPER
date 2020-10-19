@@ -7,13 +7,13 @@
 
 import Foundation
 
-//public protocol MessageServiceProtocol {
-//
-//    func fetchAllMessages(completion: @escaping (Result<Messages>) -> Void)
-//
-//}
+public protocol MessageServiceProtocol {
 
-public class MessagesService {
+    func fetchAllMessages(completion: @escaping (Result<Messages>) -> Void)
+
+}
+
+public class MessagesService: MessageServiceProtocol {
     
     
     static let shared = MessagesService()
