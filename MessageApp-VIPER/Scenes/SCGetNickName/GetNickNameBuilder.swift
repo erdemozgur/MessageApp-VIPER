@@ -13,8 +13,11 @@ final class GetNickNameBuilder {
         
         let storyboard = UIStoryboard(name: "GetNickName", bundle: nil)
         let view = storyboard.instantiateViewController(withIdentifier: "GetNickName") as! GetNickNameViewController
-        let router = GetNickNameRouter()
-        view.router = router
+        view.modalPresentationStyle = .overFullScreen
+        let router = GetNickNameRouter(view: view)
+        let presenter = GetNickNamePresenter(view: view, router: router)
+        view.presenter = presenter
+        
         return view
         
     }

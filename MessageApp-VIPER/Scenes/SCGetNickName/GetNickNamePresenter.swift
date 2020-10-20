@@ -7,13 +7,19 @@
 
 import UIKit
 
-final class GetNickNamePresenter {
+final class GetNickNamePresenter: GetNickNamePresenterProtocol {
     
     private unowned let view: GetNickNameViewProtocol
+    private let router: GetNickNameRouterProtocol
     
-    init(view: GetNickNameViewProtocol) {
+    init(view: GetNickNameViewProtocol, router: GetNickNameRouterProtocol ) {
         
         self.view = view
+        self.router = router
+    }
+    
+    func navigateTo(with nickname: String) {
+        router.navigate(with: nickname)
     }
     
 }

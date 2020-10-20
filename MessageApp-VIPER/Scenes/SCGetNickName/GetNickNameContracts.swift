@@ -10,20 +10,19 @@ import UIKit
 // MARK: - Interactor
 
 // MARK: - Presenter
-
-enum GetNickNamePresenterOutput {
-    case updateNickName(String)
+protocol GetNickNamePresenterProtocol: class {
+    func navigateTo(with nickname: String)
 }
+
 
 // MARK: - View
 
 protocol GetNickNameViewProtocol: class {
-    func handleOutput(_ output: GetNickNamePresenterOutput)
 }
 
 //MARK: - ROUTER
 protocol GetNickNameRouterProtocol: class {
-    func navigate(with nickname: String, viewController: UIViewController)
+    func navigate(with nickname: String)
 }
 
 

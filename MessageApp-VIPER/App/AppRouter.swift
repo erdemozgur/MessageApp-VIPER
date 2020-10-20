@@ -16,17 +16,21 @@ final class AppRouter {
     }
     
     
-//    func start() {
-//        let viewController = MessagesBuilder.make()
-//        let navigationController = UINavigationController(rootViewController: viewController)
-//        window.rootViewController = navigationController
-//        window.makeKeyAndVisible()
-//    }
-    
     func start() {
-        let viewController = GetNickNameBuilder.make()
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: "FirstLaunch") == true {
+            
+            let viewController = MessagesBuilder.make(with: defaults.string(forKey: "nickname")!)
+            window.rootViewController = viewController
+            window.makeKeyAndVisible()
+            
+        } else {
+            
+            let viewController = GetNickNameBuilder.make()
+            window.rootViewController = viewController
+            window.makeKeyAndVisible()
+        }
+       
     }
     
     

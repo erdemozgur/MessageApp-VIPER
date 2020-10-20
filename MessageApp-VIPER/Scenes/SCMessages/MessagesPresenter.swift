@@ -11,15 +11,21 @@ final class MessagesPresenter: MessagesPresenterProtocol {
     
     private unowned let view: MessagesViewProtocol
     private let interactor: MessagesInteractorProtocol
+    private let router: MessagesRouterProtocol
     
-    init(view: MessagesViewProtocol, interactor: MessagesInteractorProtocol) {
+    init(view: MessagesViewProtocol, interactor: MessagesInteractorProtocol, router: MessagesRouterProtocol) {
         self.view = view
         self.interactor = interactor
+        self.router = router
         self.interactor.delegate = self
     }
     
     func load() {
         interactor.load()
+    }
+    
+    func navigateTo() {
+        router.navigate()
     }
     
 }

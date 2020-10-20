@@ -26,6 +26,7 @@ protocol MessagesInteractorDelegate: class {
 
 protocol MessagesPresenterProtocol: class {
     func load()
+    func navigateTo()
 }
 
 enum MessagesPresenterOutput {
@@ -42,5 +43,5 @@ protocol MessagesViewProtocol: class {
 // MARK: - Router
 
 protocol MessagesRouterProtocol: class {
-    func navigate(with nickname: String, viewController: UIViewController)
+    func navigate()
 }

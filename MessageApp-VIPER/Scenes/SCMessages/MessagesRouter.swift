@@ -8,10 +8,15 @@
 import UIKit
 
 final class MessagesRouter: MessagesRouterProtocol {
-        
-    func navigate(with nickname: String, viewController: UIViewController) {
     
-        viewController.present(GetNickNameBuilder.make(), animated: true, completion: nil)
+    unowned let view: UIViewController
+    init(view: UIViewController) {
+        self.view = view
+    }
+        
+    func navigate() {
+    
+        self.view.present(GetNickNameBuilder.make(), animated: true, completion: nil)
         
     }
     

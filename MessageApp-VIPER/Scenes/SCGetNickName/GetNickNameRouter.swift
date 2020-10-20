@@ -8,10 +8,18 @@
 import UIKit
 
 final class GetNickNameRouter: GetNickNameRouterProtocol {
-        
-    func navigate(with nickname: String, viewController: UIViewController) {
     
-        viewController.present(MessagesBuilder.make(with: nickname), animated: true, completion: nil)
+    unowned let view: UIViewController
+    
+    init(view: UIViewController) {
+        
+        self.view = view
+        
+    }
+        
+    func navigate(with nickname: String) {
+    
+        self.view.present(MessagesBuilder.make(with: nickname), animated: true, completion: nil)
         
     }
     

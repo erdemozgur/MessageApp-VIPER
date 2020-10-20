@@ -16,8 +16,9 @@ final class MessagesBuilder {
         let navigationController: UINavigationController = UINavigationController(rootViewController: view)
         navigationController.modalPresentationStyle = .overFullScreen
         
+        let router = MessagesRouter(view: view)
         let interactor = MessagesInteractor(service: app.service)
-        let presenter = MessagesPresenter(view: view, interactor: interactor)
+        let presenter = MessagesPresenter(view: view, interactor: interactor, router: router)
         view.presenter = presenter
         view.nickName = nickName
         

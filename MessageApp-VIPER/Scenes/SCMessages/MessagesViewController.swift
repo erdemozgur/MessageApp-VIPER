@@ -12,11 +12,12 @@ class MessagesViewController: UIViewController, MessagesViewProtocol, UITextFiel
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet var keyboardHeightLayoutConstraint: NSLayoutConstraint?
     
     private var messages: [Message] = []
     var presenter: MessagesPresenterProtocol!
     var nickName: String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.load()
@@ -89,18 +90,18 @@ extension MessagesViewController {
             
             if self.view.frame.origin.y == 0 {
                 
-                self.view.frame.origin.y -= keyboardSize.height
+                self.view.frame.origin.y -= keyboardSize.height + 20
             }
         }
     }
     
     @objc private func keyboardWillHide(notify: NSNotification) {
         
-        if let keyboardSize = (notify.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+        if ((notify.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue) != nil {
             
             if self.view.frame.origin.y != 0 {
                 
-                self.view.frame.origin.y += keyboardSize.height
+                self.view.frame.origin.y = 0
             }
         }
     }
@@ -109,6 +110,30 @@ extension MessagesViewController {
         
         view.endEditing(true)
     }
+    
+    @objc func keyboardNotification(notification: NSNotification) {
+         guard let userInfo = notification.userInfo else { return }
+
+         let endFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+         let endFrameY = endFrame?.origin.y ?? 0
+         let duration:TimeInterval = (userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+         let animationCurveRawNSN = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+         let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIView.AnimationOptions.curveEaseInOut.rawValue
+         let animationCurve:UIView.AnimationOptions = UIView.AnimationOptions(rawValue: animationCurveRaw)
+
+         if endFrameY >= UIScreen.main.bounds.size.height {
+           self.keyboardHeightLayoutConstraint?.constant = 0.0
+         } else {
+           self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+         }
+
+         UIView.animate(
+           withDuration: duration,
+           delay: TimeInterval(0),
+           options: animationCurve,
+           animations: { self.view.layoutIfNeeded() },
+           completion: nil)
+       }
     
     private func moveToBottom() {
         
@@ -122,6 +147,23 @@ extension MessagesViewController {
     
     private func setUI() {
         
+        let defaults = UserDefaults.standard
+        
+        if defaults.bool(forKey: "FirstLaunch") == true {
+            
+            title = self.nickName
+        } else {
+            //FIRST LAUNCH
+            defaults.setValue(self.nickName, forKeyPath: "nickname")
+            title = defaults.string(forKey: "nickName")
+            defaults.set(true, forKey: "FirstLaunch")
+        }
+        
+        
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(goBack))
+        var backImage = UIImage(named: "24x24BackButtonImage")
+        backImage = backImage?.withTintColor(UIColor.black)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: backImage, style: .plain, target: self, action: #selector(goBack))
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
         title = self.nickName
@@ -143,6 +185,11 @@ extension MessagesViewController {
         tempImageView.frame = self.tableView.frame
         self.tableView.backgroundView = tempImageView
         
+    }
+    
+    @objc private func goBack() {
+        
+        presenter.navigateTo()
     }
     
     
