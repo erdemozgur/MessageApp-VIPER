@@ -16,12 +16,20 @@ final class AppRouter {
     }
     
     
+//    func start() {
+//        let viewController = MessagesBuilder.make()
+//        let navigationController = UINavigationController(rootViewController: viewController)
+//        window.rootViewController = navigationController
+//        window.makeKeyAndVisible()
+//    }
+    
     func start() {
-        let viewController = MessagesBuilder.make()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        window.rootViewController = navigationController
+        let viewController = GetNickNameBuilder.make()
+        window.rootViewController = viewController
         window.makeKeyAndVisible()
     }
+    
+    
     
     
 }

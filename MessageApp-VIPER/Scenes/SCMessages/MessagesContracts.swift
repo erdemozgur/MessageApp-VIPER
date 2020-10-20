@@ -5,7 +5,7 @@
 //  Created by Erdem Özgür on 19.10.2020.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - Interactor
 
@@ -36,9 +36,11 @@ enum MessagesPresenterOutput {
 // MARK: - View
 
 protocol MessagesViewProtocol: class {
-    func handleOutput(_ output: MessagesInteractorOutput)
+    func handleOutput(_ output: MessagesPresenterOutput)
 }
 
 // MARK: - Router
 
-//TODO
+protocol MessagesRouterProtocol: class {
+    func navigate(with nickname: String, viewController: UIViewController)
+}

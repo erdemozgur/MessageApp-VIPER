@@ -15,6 +15,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol, UITextFiel
     
     private var messages: [Message] = []
     var presenter: MessagesPresenterProtocol!
+    var nickName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +24,15 @@ class MessagesViewController: UIViewController, MessagesViewProtocol, UITextFiel
         
     }
     
-    func handleOutput(_ output: MessagesInteractorOutput) {
+    func handleOutput(_ output: MessagesPresenterOutput) {
         switch output {
         case .showMessages(let allMessages):
             self.messages = allMessages
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+        case .updateTitle(_):
+            break
         }
     }
     
@@ -37,7 +40,7 @@ class MessagesViewController: UIViewController, MessagesViewProtocol, UITextFiel
         
         if (messageField.text != nil && messageField.text != ""){
             
-            let message = Message(id: "currentUser", text: messageField.text, timestamp: nil, user: User(id: nil, avatarURL: nil, nickname: "Erdem Ozgur"))
+            let message = Message(id: "currentUser", text: messageField.text, timestamp: nil, user: User(id: nil, avatarURL: nil, nickname: self.nickName))
             self.messages.append(message)
             self.tableView.reloadData()
             self.messageField.text = ""
@@ -121,7 +124,7 @@ extension MessagesViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 300
-        
+        title = self.nickName
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
